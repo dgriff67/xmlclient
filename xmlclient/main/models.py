@@ -69,9 +69,6 @@ class Pl1516(models.Model):
     pscd = models.FloatField(db_column='PSCD', blank=True, null=True)  # Field name made lowercase.
     psca = models.FloatField(db_column='PSCA', blank=True, null=True)  # Field name made lowercase.
 
-    def __init__(self, dictionary):
-        self.__dict__.update(dictionary)
-
     def __str__(self):
         return "{0} {1} vs {2} {3} on {4}".format(self.hometeam, self.fthg, self.awayteam, self.ftag, self.date)
 
