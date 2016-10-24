@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premier League Listings 2015-2016</title>
+</head>
+<body>
+<ul>
+    {% for match in matches %}
+    <li>{{ match.hometeam}} ({{match.fthg}}) {{match.awayteam}} ({{match.ftag}}) </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
