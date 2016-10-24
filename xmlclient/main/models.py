@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Pl1516(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField
+    resource_uri = models.TextField(db_column='resource_uri', blank=True, null=True)
     div = models.TextField(db_column='Div', blank=True, null=True)  # Field name made lowercase.
     date = models.TextField(db_column='Date', blank=True, null=True)  # Field name made lowercase.
     hometeam = models.TextField(db_column='HomeTeam', blank=True, null=True)  # Field name made lowercase.
@@ -68,6 +69,7 @@ class Pl1516(models.Model):
     psch = models.FloatField(db_column='PSCH', blank=True, null=True)  # Field name made lowercase.
     pscd = models.FloatField(db_column='PSCD', blank=True, null=True)  # Field name made lowercase.
     psca = models.FloatField(db_column='PSCA', blank=True, null=True)  # Field name made lowercase.
+
 
     def __str__(self):
         return "{0} {1} vs {2} {3} on {4}".format(self.hometeam, self.fthg, self.awayteam, self.ftag, self.date)
