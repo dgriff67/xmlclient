@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Premier League Listings 2015-2016</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<ul>
-    {% for match in matches %}
-    <li>{{ match.hometeam}} ({{match.fthg}}) {{match.awayteam}} ({{match.ftag}}) </li>
-    {% endfor %}
-</ul>
+
+<!--{% if hthg_filter %} {{match.hthg}} {% endif %}-->
+<div class="container">
+    <h2>Premier League Results 2015-2016</h2>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Home Team</th>
+                    <th>FTHG</th>
+                    <th>{% if hthg_filter %} (HTHG) {% endif %}</th>
+                    <th>Away Team</th>
+                    <th>FTAG</th>
+                    <th>{% if htag_filter %} (HTAG) {% endif %}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for match in matches %}
+                <tr>
+                    <td>{{match.hometeam}}</td>
+                    <td>{{match.fthg}}</td>
+                    <td>{% if hthg_filter %} ({{match.hthg}}) {% endif %}</td>
+                    <td>{{match.awayteam}}</td>
+                    <td>{{match.ftag}}</td>
+                    <td>{% if htag_filter %} ({{match.htag}}) {% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</div>
 </body>
 </html>
