@@ -2,35 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <title>Premier League Results 2015-2016</title>
 </head>
 <body>
+<h2>Premier League Results 2015-2016</h2>
 <form action="{% url 'index' %}" method="get">
-    <label for="hometeam">Home Team</label>
-    <select name="hometeam">
-        <option value="Arsenal" />Arsenal</option>
-        <option value="Aston Villa" />Aston Villa</option>
-        <option value="Bournemouth" />Bournemouth</option>
-        <option value="Chelsea" />Chelsea</option>
-        <option value="Crystal Palace" />Crystal Palace</option>
-        <option value="Everton" />Everton</option>
-        <option value="Leicester" />Leicester</option>
-        <option selected='selected' value="Liverpool" />Liverpool</option>
-        <option value="Man City" />Man City</option>
-        <option value="Man United" />Man United</option>
-        <option value="Newcastle" />Newcastle</option>
-        <option value="Norwich" />Norwich</option>
-        <option value="Southampton" />Southampton</option>
-        <option value="Stoke" />Stoke</option>
-        <option value="Sunderland" />Sunderland</option>
-        <option value="Swansea" />Swansea</option>
-        <option value="Tottenham" />Tottenham</option>
-        <option value="Watford" />Watford</option>
-        <option value="West Brom" />West Brom</option>
-        <option value="West Ham" />West Ham</option>
-    </select>
-    <input type="checkbox" name="HTHG"/>Half Time Home Goals<br/>
-    <input type="checkbox" name="HTAG"/>Half Team Away Goals<br/>
+    <div class="form-group">
+        <label for="hometeam">Home Team</label>
+        <select name="hometeam">
+            <option value="Arsenal" />Arsenal</option>
+            <option value="Aston Villa" />Aston Villa</option>
+            <option value="Bournemouth" />Bournemouth</option>
+            <option value="Chelsea" />Chelsea</option>
+            <option value="Crystal Palace" />Crystal Palace</option>
+            <option value="Everton" />Everton</option>
+            <option value="Leicester" />Leicester</option>
+            <option selected='selected' value="Liverpool" />Liverpool</option>
+            <option value="Man City" />Man City</option>
+            <option value="Man United" />Man United</option>
+            <option value="Newcastle" />Newcastle</option>
+            <option value="Norwich" />Norwich</option>
+            <option value="Southampton" />Southampton</option>
+            <option value="Stoke" />Stoke</option>
+            <option value="Sunderland" />Sunderland</option>
+            <option value="Swansea" />Swansea</option>
+            <option value="Tottenham" />Tottenham</option>
+            <option value="Watford" />Watford</option>
+            <option value="West Brom" />West Brom</option>
+            <option value="West Ham" />West Ham</option>
+        </select>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" name="HTHG"/>Half Time Home Goals</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" name="HTAG"/>Half Team Away Goals</label>
+    </div>
     <input type="submit" />
 </form>
 </body>
