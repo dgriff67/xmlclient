@@ -16,23 +16,86 @@
         <table class="table table-condensed">
             <thead>
                 <tr>
+                    <th>Date</th>
                     <th>Home Team</th>
-                    <th>FTHG</th>
-                    <th>{% if hthg_filter %} (HTHG) {% endif %}</th>
+                    <th>FT</th>
+                    <th>{% if ht_filter %} (HT) {% endif %}</th>
+                    <th>{% if s_filter %} Shots {% endif %}</th>
+                    <th>{% if st_filter %} On Target {% endif %}</th>
+                    <th>{% if c_filter %} Corners {% endif %}</th>
+                    <th>{% if fc_filter %} Fouls {% endif %}</th>
+                    <th>{% if yc_filter %} Yellows {% endif %}</th>
+                    <th>{% if rc_filter %} Reds {% endif %}</th>
+
                     <th>Away Team</th>
-                    <th>FTAG</th>
-                    <th>{% if htag_filter %} (HTAG) {% endif %}</th>
+                    <th>FT</th>
+                    <th>{% if ht_filter %} (HT) {% endif %}</th>
+                    <th>{% if s_filter %} Shots {% endif %}</th>
+                    <th>{% if st_filter %} On Target {% endif %}</th>
+                    <th>{% if c_filter %} Corners {% endif %}</th>
+                    <th>{% if fc_filter %} Fouls {% endif %}</th>
+                    <th>{% if yc_filter %} Yellows {% endif %}</th>
+                    <th>{% if rc_filter %} Reds {% endif %}</th>
+                    <th>{% if htr_filter %} (HT) {% endif %}</th>
+                    <th>{% if ftr_filter %} FT {% endif %}</th>
+                    <th>{% if ref_filter %} Ref {% endif %}</th>
+                    <th>{% if b365_filter %} B365 H {% endif %}</th>
+                    <th>{% if b365_filter %} B365 A {% endif %}</th>
+                    <th>{% if b365_filter %} B365 D {% endif %}</th>
+                    <th>{% if lad_filter %} Ladbroke H {% endif %}</th>
+                    <th>{% if lad_filter %} Ladbroke A {% endif %}</th>
+                    <th>{% if lad_filter %} Ladbroke D {% endif %}</th>
+                    <th>{% if vc_filter %} VC H {% endif %}</th>
+                    <th>{% if vc_filter %} VC A {% endif %}</th>
+                    <th>{% if vc_filter %} VC D {% endif %}</th>
+                    <th>{% if wh_filter %} WH H {% endif %}</th>
+                    <th>{% if wh_filter %} WH A {% endif %}</th>
+                    <th>{% if wh_filter %} WH D {% endif %}</th>
+                    <th>{% if bb25_filter %} BB Av >2.5 {% endif %}</th>
+                    <th>{% if bb25_filter %} BB Av <2.5 {% endif %}</th>
                 </tr>
             </thead>
             <tbody>
             {% for match in matches %}
                 <tr>
+                    <td>{{match.date}}</td>
                     <td>{{match.hometeam}}</td>
                     <td>{{match.fthg}}</td>
-                    <td>{% if hthg_filter %} ({{match.hthg}}) {% endif %}</td>
+                    <td>{% if ht_filter %} ({{match.hthg}}) {% endif %}</td>
+                    <td>{% if s_filter %} {{match.hs}} {% endif %}</td>
+                    <td>{% if st_filter %} {{match.hst}} {% endif %}</td>
+                    <td>{% if c_filter %} {{match.hc}} {% endif %}</td>
+                    <td>{% if fc_filter %} {{match.hf}} {% endif %}</td>
+                    <td>{% if yc_filter %} {{match.hy}} {% endif %}</td>
+                    <td>{% if rc_filter %} {{match.hr}} {% endif %}</td>
+
                     <td>{{match.awayteam}}</td>
                     <td>{{match.ftag}}</td>
-                    <td>{% if htag_filter %} ({{match.htag}}) {% endif %}</td>
+                    <td>{% if ht_filter %} ({{match.htag}}) {% endif %}</td>
+                    <td>{% if s_filter %} {{match.as_field}} {% endif %}</td>
+                    <td>{% if st_filter %} {{match.ast}} {% endif %}</td>
+                    <td>{% if c_filter %} {{match.ac}} {% endif %}</td>
+                    <td>{% if fc_filter %} {{match.af}} {% endif %}</td>
+                    <td>{% if yc_filter %} {{match.ay}} {% endif %}</td>
+                    <td>{% if rc_filter %} {{match.ar}} {% endif %}</td>
+                    <td>{% if htr_filter %} ({{match.htr}}) {% endif %}</td>
+                    <td>{% if ftr_filter %} {{match.ftr}} {% endif %}</td>
+                    <td>{% if ref_filter %} {{match.referee}} {% endif %}</td>
+                    <td>{% if b365_filter %} {{match.b365h}} {% endif %}</td>
+                    <td>{% if b365_filter %} {{match.b365a}} {% endif %}</td>
+                    <td>{% if b365_filter %} {{match.b365d}} {% endif %}</td>
+                    <td>{% if lad_filter %} {{match.lbh}} {% endif %}</td>
+                    <td>{% if lad_filter %} {{match.lba}} {% endif %}</td>
+                    <td>{% if lad_filter %} {{match.lbd}} {% endif %}</td>
+                    <td>{% if vc_filter %} {{match.vch}} {% endif %}</td>
+                    <td>{% if vc_filter %} {{match.vca}} {% endif %}</td>
+                    <td>{% if vc_filter %} {{match.vcd}} {% endif %}</td>
+                    <td>{% if wh_filter %} {{match.whh}} {% endif %}</td>
+                    <td>{% if wh_filter %} {{match.wha}} {% endif %}</td>
+                    <td>{% if wh_filter %} {{match.whd}} {% endif %}</td>
+                    <td>{% if bb25_filter %} {{match.bbav_2_5}} {% endif %}</td>
+                    <td>{% if bb25_filter %} {{match.bbav_2_5_0}} {% endif %}</td>
+
                 </tr>
             {% endfor %}
             </tbody>
